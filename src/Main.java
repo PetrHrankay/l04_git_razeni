@@ -1,7 +1,6 @@
 import cz.engeto.ja.Computer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -19,6 +18,16 @@ public class Main {
         for (Computer computer : computers) {
             System.out.println(computer.getDescription() + " " + computer.getYearOfProduction() + " " + computer.getPrice());
         }
+
+        computers.sort(Comparator.comparing(Computer::getYearOfProduction));
+
+        System.out.println("\nSorted by year of production\n");
+        computers.forEach(System.out::println);
+
+        Collections.sort(computers, Comparator.comparing(Computer::getPrice).reversed());
+
+        System.out.println("\nSorted by price reversed\n");
+        computers.forEach(System.out::println);
 
     }
 }
