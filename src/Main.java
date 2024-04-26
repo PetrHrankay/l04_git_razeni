@@ -1,4 +1,5 @@
 import cz.engeto.ja.Computer;
+import cz.engeto.ja.ComputerComparator;
 
 import java.util.*;
 
@@ -9,11 +10,18 @@ public class Main {
 
         Computer computer1 = new Computer("Dell", 2019, 15000);
         Computer computer2 = new Computer("HP", 2018, 12000);
+        Computer computerX = new Computer("HP", 2018, 12000);
+        Computer computerY = new Computer("HP", 2018, 11000);
+        Computer computerZ = new Computer("HP", 2018, 13000);
         Computer computer3 = new Computer("Lenovo", 2017, 10000);
 
-        computers.add(computer1);
-        computers.add(computer2);
-        computers.add(computer3);
+        computers.addAll(List.of(computer1, computer2, computer3, computerX, computerY, computerZ));
+
+//        computers.add(computer1);
+//        computers.add(computer2);
+//        computers.add(computerX);
+//        computers.add(computerY);
+//        computers.add(computerZ);
 
         for (Computer computer : computers) {
             System.out.println(computer.getDescription() + " " + computer.getYearOfProduction() + " " + computer.getPrice());
@@ -27,6 +35,14 @@ public class Main {
         Collections.sort(computers, Comparator.comparing(Computer::getPrice).reversed());
 
         System.out.println("\nSorted by price reversed\n");
+        computers.forEach(System.out::println);
+
+        Collections.sort(computers);
+        System.out.println("\nSorted by description:\n");
+        computers.forEach(System.out::println);
+
+        computers.sort(new ComputerComparator());
+        System.out.println("\nSorted by my own comparator:\n");
         computers.forEach(System.out::println);
 
     }
