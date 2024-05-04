@@ -5,6 +5,8 @@ import cz.engeto.ja.ComputerManager;
 import java.util.*;
           
 public class Main {
+
+    //Pokus
     public static void main(String[] args) {
         List<Computer> defaultList = new ArrayList<>();
         defaultList.add(
@@ -16,6 +18,11 @@ public class Main {
 
         System.out.println(manager.getCountOfDellComputers());
         manager.getComputers().forEach(System.out::println);
+    }
+
+
+    private static void pokus() {
+
     }
     public static void mainSortTest() {
 
