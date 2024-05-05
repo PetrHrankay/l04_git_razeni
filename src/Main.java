@@ -24,6 +24,10 @@ public class Main {
     private static void pokus() {
 
     }
+
+    private static void jinaMetoda() {
+              // ...
+    }
     public static void mainSortTest() {
 
         List<Computer> computers = new ArrayList<>();
